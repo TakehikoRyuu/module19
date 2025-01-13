@@ -1,0 +1,39 @@
+{% extends "menu.html" %}
+
+{% block pagename %}
+    <h1>Новости</h1>
+    <!-- Изменяем заголовок страницы -->
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for news in page_obj %}
+            <li>{{ news.title }} —
+                {{ news.content }} <br>
+                {{ news.date }}</li><br>
+        {% endfor %}
+    </ul>
+
+    <div class="pagination">
+        <!-- Ссылка на предыдущую страницу -->
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+        {% endif %}
+
+        <!-- Номера страниц -->
+        {% for num in page_obj.paginator.page_range %}
+            {% if num == page_obj.number %}
+                <strong>{{ num }}</strong>
+            {% else %}
+                <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        <!-- Ссылка на следующую страницу -->
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
+        {% endif %}
+    </div>
+{% endblock %}
+</body>
+</html>
