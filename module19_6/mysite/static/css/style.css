@@ -1,0 +1,38 @@
+body {
+    background-color: brown;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: disc; /* Сохранение точек у списка */
+    padding-left: 20px; /* Отступ слева */
+}
+
+li {
+    display: flex; /* Используем flexbox для выравнивания текста и кнопки */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    margin-bottom: 10px; /* Отступ между элементами списка */
+}
+
+.button {
+    display: inline-block; /* Делаем кнопку блочным элементом */
+    margin-left: 10px; /* Отступ слева от текста */
+    padding: 5px 10px; /* Внутренние отступы кнопки */
+    font-size: 14px; /* Размер текста кнопки */
+    color: #fff; /* Белый текст */
+    background-color: #007bff; /* Синий фон */
+    border: 1px solid #0056b3; /* Тонкая рамка, темнее фона */
+    border-radius: 4px; /* Скругленные углы */
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавный переход при наведении */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Темно-синий при наведении */
+}
+
+}

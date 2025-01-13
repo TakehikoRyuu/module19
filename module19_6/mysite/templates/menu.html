@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <!-- блок для изменения заголовка страницы на дочерних шаблонах -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- Подключение CSS-файла через static -->
+</head>
+<body>
+    <!-- Блок №1: Название страницы -->
+    <header>
+        {% block pagename %}
+        <h1>Default Page Title</h1>
+        <!-- Значение по умолчанию, которое можно заменить в дочернем шаблоне -->
+        {% endblock %}
+    </header>
+
+    <!-- Блок №2: Меню сайта -->
+    <nav>
+        {% block menu %}
+        <ul>
+            <h4><a href="/platform/" target="platform">Главная</a></h4>
+            <h4><a href="/platform/games/" target="games">Магазин</a></h4>
+            <h4><a href="/platform/cart/" target="cart">Корзина</a></h4>
+            <h4><a href="/platform/news/" target="news">Новости</a></h4>
+        </ul>
+        <!-- Это меню будет одинаковым на всех страницах, но можно расширять -->
+        {% endblock %}
+    </nav>
+
+    <!-- Блок №3: Содержание страницы -->
+    <main>
+        {% block content %}
+<!--        <p>Default content</p>-->
+        <!-- Значение по умолчанию для содержания -->
+        {% endblock %}
+    </main>
+</body>
+</html>
